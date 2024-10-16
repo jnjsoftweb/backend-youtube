@@ -1,0 +1,437 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "youtube-express",
+    "collectionId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+    "dateExported": "2024-10-15T11:58:34.812Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "98db4ccb-4d39-4cd4-a7ad-f46f8e743978",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "jnj_subscriptions",
+            "url": "http://localhost:3006/subscriptions?userId=bigwhitekmc",
+            "method": "GET",
+            "sortNum": 5000,
+            "created": "2024-10-14T23:38:15.078Z",
+            "modified": "2024-10-15T06:18:23.072Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "userId",
+                    "value": "bigwhitekmc",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "dbc7ce3c-7de3-443a-922b-fae195f541ba",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_playlists",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCGKts6AP1HFBqcAo4r6GHTg&maxResults=25&key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-10-14T23:31:49.406Z",
+            "modified": "2024-10-15T01:03:37.612Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "channelId",
+                    "value": "UCGKts6AP1HFBqcAo4r6GHTg",
+                    "isPath": false
+                },
+                {
+                    "name": "maxResults",
+                    "value": "25",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "7b70dbf5-79b9-4003-aaec-17c7629c7c65",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "download_Youtube",
+            "url": "http://localhost:3006/downloadYoutube?videoId=RfUlsRjxMM0&resolution=720",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-10-15T05:09:45.115Z",
+            "modified": "2024-10-15T05:15:06.310Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "videoId",
+                    "value": "RfUlsRjxMM0",
+                    "isPath": false
+                },
+                {
+                    "name": "resolution",
+                    "value": "720",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "863dc90f-0f8b-4a0c-b2aa-15189582a164",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_playlists",
+            "url": "http://localhost:3006/playlists?part=snippet&channelId=UCJIlfUISLIj9DODAQJWGHfA",
+            "method": "GET",
+            "sortNum": 15000,
+            "created": "2024-10-14T23:39:05.282Z",
+            "modified": "2024-10-15T04:55:09.635Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "channelId",
+                    "value": "UCJIlfUISLIj9DODAQJWGHfA",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "7139a5c3-ce88-40ec-8b15-0638a5c68e47",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_playlists_token",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlists?channelId=UCcfz-8gGDYJfaRHYD7kkQpw&token=ya29.a0AcM612w9Ew9aQwR1kh1CfLhfC55ZBROQx2cUJmxRlD3tunRpLp7rflrwq7cGPHibpayDmko1ennMFT0a9p6fefKV5W9FdZJAyvMtXtr_9j0qL41a3s1aXxpFBbzhvFZ1MYFeNWWmaSLpXBLzlgwlBSdUPM_sss7FjnlI1PuaaCgYKAZoSARASFQHGX2Mi5AgDvQYco5V4DDwuWds9sQ0175",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-14T23:32:14.551Z",
+            "modified": "2024-10-14T23:32:36.892Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "channelId",
+                    "value": "UCcfz-8gGDYJfaRHYD7kkQpw",
+                    "isPath": false
+                },
+                {
+                    "name": "token",
+                    "value": "ya29.a0AcM612w9Ew9aQwR1kh1CfLhfC55ZBROQx2cUJmxRlD3tunRpLp7rflrwq7cGPHibpayDmko1ennMFT0a9p6fefKV5W9FdZJAyvMtXtr_9j0qL41a3s1aXxpFBbzhvFZ1MYFeNWWmaSLpXBLzlgwlBSdUPM_sss7FjnlI1PuaaCgYKAZoSARASFQHGX2Mi5AgDvQYco5V4DDwuWds9sQ0175",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "d9b6c6f7-48b5-415e-8a01-5a4a41ec2cee",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_playlistItems",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLwt0kothbrpdAlGrzPwjSxbkxZXqrfL5k&maxResults=25&key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-14T23:33:08.767Z",
+            "modified": "2024-10-14T23:34:11.190Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "playlistId",
+                    "value": "PLwt0kothbrpdAlGrzPwjSxbkxZXqrfL5k",
+                    "isPath": false
+                },
+                {
+                    "name": "maxResults",
+                    "value": "25",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "6917da59-61d9-4a6e-b2d9-34ab585090b4",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "download_Subtitles",
+            "url": "http://localhost:3006/downloadSubtitles?videoId=RfUlsRjxMM0&languages=en,ko&formatType=vtt",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-15T05:22:38.066Z",
+            "modified": "2024-10-15T05:23:55.316Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "videoId",
+                    "value": "RfUlsRjxMM0",
+                    "isPath": false
+                },
+                {
+                    "name": "languages",
+                    "value": "en,ko",
+                    "isPath": false
+                },
+                {
+                    "name": "formatType",
+                    "value": "vtt",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "5a5d59cb-91f8-44bb-9812-31f24dae1573",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_search",
+            "url": "http://localhost:3006/search?part=snippet&q=파이코인",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-10-15T02:37:13.792Z",
+            "modified": "2024-10-15T08:34:03.919Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "q",
+                    "value": "파이코인",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "4658584c-049b-43e2-8d39-f76516d38dd6",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_channels",
+            "url": "http://localhost:3006/channels?part=snippet,statistics,contentDetails&id=UCUpJs89fSBXNolQGOYKn0YQ",
+            "method": "GET",
+            "sortNum": 25000,
+            "created": "2024-10-15T03:23:28.602Z",
+            "modified": "2024-10-15T04:55:07.074Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet,statistics,contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "UCUpJs89fSBXNolQGOYKn0YQ",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "e2a79f9f-d5ae-4a76-834d-0a62dd74d787",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_videos",
+            "url": "http://localhost:3006/videos?part=snippet&id=SCOhGy-IftM,Iju0_X9-rp8",
+            "method": "GET",
+            "sortNum": 27500,
+            "created": "2024-10-15T02:41:21.767Z",
+            "modified": "2024-10-15T04:55:22.289Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "SCOhGy-IftM,Iju0_X9-rp8",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "01eed106-4764-4997-b8ab-61496ff9bd4a",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_playlistItems",
+            "url": "http://localhost:3006/playlistItems?part=snippet&playlistId=PLwt0kothbrpdAlGrzPwjSxbkxZXqrfL5k",
+            "method": "GET",
+            "sortNum": 28750,
+            "created": "2024-10-15T02:58:44.287Z",
+            "modified": "2024-10-15T04:55:28.410Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "playlistId",
+                    "value": "PLwt0kothbrpdAlGrzPwjSxbkxZXqrfL5k",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "38a0e5a2-3f82-4cb4-a6b4-8210d161df5f",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_channelByCustomUrl",
+            "url": "http://localhost:3006/channelByCustomUrl?customUrl=nomadcoders",
+            "method": "GET",
+            "sortNum": 29062.5,
+            "created": "2024-10-15T03:17:22.166Z",
+            "modified": "2024-10-15T04:55:39.648Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "customUrl",
+                    "value": "nomadcoders",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "aed5a2d7-0127-4125-91e2-0a1b679ef800",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "rest_channelIdByCustomUrl",
+            "url": "http://localhost:3006/channelIdByCustomUrl?customUrl=@nomadcoders",
+            "method": "GET",
+            "sortNum": 29375,
+            "created": "2024-10-15T03:09:20.674Z",
+            "modified": "2024-10-15T04:55:34.454Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "customUrl",
+                    "value": "@nomadcoders",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "488373fb-47d9-4466-a009-97f6fa24d95a",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_subscriptions",
+            "url": "https://youtube.googleapis.com/youtube/v3/subscriptions?part=snippet&mine=true&key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-14T23:34:38.857Z",
+            "modified": "2024-10-14T23:34:57.784Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "mine",
+                    "value": "true",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "1ce7b56b-3fcd-4034-bba0-3280d4327a34",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_playlists_token Copy",
+            "url": "https://youtube.googleapis.com/youtube/v3/playlists?channelId=UCcfz-8gGDYJfaRHYD7kkQpw&token=ya29.a0AcM612w9Ew9aQwR1kh1CfLhfC55ZBROQx2cUJmxRlD3tunRpLp7rflrwq7cGPHibpayDmko1ennMFT0a9p6fefKV5W9FdZJAyvMtXtr_9j0qL41a3s1aXxpFBbzhvFZ1MYFeNWWmaSLpXBLzlgwlBSdUPM_sss7FjnlI1PuaaCgYKAZoSARASFQHGX2Mi5AgDvQYco5V4DDwuWds9sQ0175",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-15T01:08:49.958Z",
+            "modified": "2024-10-15T01:11:11.862Z",
+            "headers": [
+                {
+                    "name": "Authorization",
+                    "value": "Bearer 1//0esJjW-j_jXE6CgYIARAAGA4SNwF-L9IrUo3jmQLzCe8hSuoh-aPWjzil2ReSLZdHXajCcAqyazHSNS1lVzvSyw_Z8BRVkCK-sPA"
+                }
+            ],
+            "params": [
+                {
+                    "name": "channelId",
+                    "value": "UCcfz-8gGDYJfaRHYD7kkQpw",
+                    "isPath": false
+                },
+                {
+                    "name": "token",
+                    "value": "ya29.a0AcM612w9Ew9aQwR1kh1CfLhfC55ZBROQx2cUJmxRlD3tunRpLp7rflrwq7cGPHibpayDmko1ennMFT0a9p6fefKV5W9FdZJAyvMtXtr_9j0qL41a3s1aXxpFBbzhvFZ1MYFeNWWmaSLpXBLzlgwlBSdUPM_sss7FjnlI1PuaaCgYKAZoSARASFQHGX2Mi5AgDvQYco5V4DDwuWds9sQ0175",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "935ced0a-9d70-48b0-ab10-9080431ce579",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_captions",
+            "url": "https://www.googleapis.com/youtube/v3/captions?videoId=XyrpG2x_Czk&key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-14T23:36:10.662Z",
+            "modified": "2024-10-14T23:36:20.579Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "videoId",
+                    "value": "XyrpG2x_Czk",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "95bc512c-fba8-4548-94f2-af5ca18fb7cb",
+            "colId": "5cc4622f-3329-4a32-9d2b-1f17f0a53ab1",
+            "containerId": "",
+            "name": "_youtubeAPI_captions_",
+            "url": "https://www.googleapis.com/youtube/v3/captions/AUieDaaiRw6ta4xaa3RvUhHfDMZ-LvesnzeI_aNTyvZ64zCqsWI?key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-10-14T23:37:06.198Z",
+            "modified": "2024-10-14T23:37:24.527Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "key",
+                    "value": "AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "settings": {
+        "docs": "# jnj-youtube 앱용 express server\n\n## windows\n\n```\ncd C:\\JnJ-soft\\Projects\\internal\\jnj-youtube\\backend\\nodejs\\express\nnode youtube.js  // port: 3006\n```\n## macos\n"
+    },
+    "ref": "9CFrmJH7_vQDIuG4_MkaF3qUj9TKpG6wnQqFOK8dDL8EHZHesXvaFdgsnzUrfOsbhqgCJn9RrRIWKcbj1dnLOA"
+}

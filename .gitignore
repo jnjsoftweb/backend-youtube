@@ -1,0 +1,15 @@
+# modules
+node_modules/
+
+# macos
+.DS_Store
+
+# secrets
+.env
+.env.*
+!.env.example
+
+_secrets
+_temp
+_backup
+
