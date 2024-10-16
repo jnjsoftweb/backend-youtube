@@ -1,19 +1,8 @@
 // [API Reference](https://developers.google.com/youtube/v3/docs?hl=ko)
 import axios from 'axios';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
+import { API_KEY, API_URL } from './settings.js';
 
-// .env 파일 로드
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
-
-// const 설정
-const API_KEY = process.env.GOOGLE_API_KEY;
-const API_URL = process.env.GOOGLE_API_URL;
-
-console.log(API_KEY, API_URL);
+// console.log(API_KEY, API_URL);
 
 // * REST API용 함수
 // YouTube API 응답을 가져오는 함수
@@ -77,7 +66,6 @@ const getChannelIdByCustomUrl = async (customUrl) => {
 };
 
 export { getAllResponses, getResponse, getChannelIdByCustomUrl };
-
 
 // const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCJIlfUISLIj9DODAQJWGHfA&maxResults=25&key=${API_KEY}`);
 // console.log(response.data);

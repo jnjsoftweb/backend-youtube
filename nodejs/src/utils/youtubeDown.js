@@ -1,18 +1,11 @@
 import fs from 'fs';
 import cp from 'child_process';
 import path from 'path';
-import dotenv from 'dotenv';
+
 import ytdl from '@distube/ytdl-core';
 import youtubeSubtitlesScraper from 'youtube-captions-scraper';
-import { fileURLToPath } from 'url';
 
-// .env 파일 로드
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
-
-// * const 설정
-const BASE_DOWN_FOLDER = process.env.BASE_DOWN_FOLDER;
+import { BASE_DOWN_FOLDER } from './settings.js';
 
 const srtFromSubtitles = (Subtitles) => {
   return Subtitles.map((Subtitle, index) => {
@@ -276,8 +269,4 @@ const downloadYoutube = async (
   }
 };
 
-export {
-  downloadSubtitles,
-  downloadYoutube,
-  BASE_DOWN_FOLDER,
-};
+export { downloadSubtitles, downloadYoutube, BASE_DOWN_FOLDER };

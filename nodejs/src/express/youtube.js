@@ -2,8 +2,8 @@
 
 import express from 'express';
 import cors from 'cors';
-import path from 'path';
-import dotenv from 'dotenv';
+
+import { EXPRESS_PORT } from '../utils/settings.js';
 import {
   getAllResponses,
   getChannelIdByCustomUrl,
@@ -14,15 +14,9 @@ import {
   downloadYoutube,
   BASE_DOWN_FOLDER,
 } from '../utils/youtubeDown.js';
-import { fileURLToPath } from 'url';
-
-// .env 파일 로드
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-dotenv.config({ path: path.resolve(__dirname, '../../../.env') });
 
 // * const 설정
-const PORT = process.env.NEXT_PUBLIC_EXPRESS_PORT || 3006;
+const PORT = EXPRESS_PORT;
 // console.log('PORT: ', PORT);
 
 // app 설정

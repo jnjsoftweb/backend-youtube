@@ -2,16 +2,7 @@ import { ApolloServer } from '@apollo/server';
 import { startStandaloneServer } from '@apollo/server/standalone';
 import { typeDefs } from './typeDefs.js';
 import { resolvers } from './resolvers.js';
-import path from 'path';
-import dotenv from 'dotenv';
-
-// .env 파일 로드
-dotenv.config({
-  path: path.resolve(
-    new URL('.', import.meta.url).pathname,
-    '../../../../.env'
-  ),
-});
+import { GRAPHQL_PORT } from '../utils/settings.js';
 
 const server = new ApolloServer({
   typeDefs,
@@ -19,7 +10,7 @@ const server = new ApolloServer({
 });
 
 const { url } = await startStandaloneServer(server, {
-  listen: { port: parseInt(process.env.NEXT_PUBLIC_GRAPHQL_PORT) || 3007 },
+  listen: { port: GRAPHQL_PORT },
 });
 
 console.log(`🚀 Server ready at: ${url}`);
