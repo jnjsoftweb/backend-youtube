@@ -17,7 +17,7 @@ const getRelatedPlaylists = async (userId) => {
 };
 
 // 내 구독 목록 가져오기
-const subscriptions = async (userId) => {
+const mySubscriptions = async (userId) => {
   const youtube = await yt(userId);
   return youtube.subscriptions_();
 };
@@ -43,4 +43,7 @@ const myPlaylistItems = async (userId, playlistId = 'LL') => {
   return playlistItems;
 };
 
-export { getRelatedPlaylists, subscriptions, myPlaylistItems };
+export { getRelatedPlaylists, mySubscriptions, myPlaylistItems };
+
+// const a = await mySubscriptions('bigwhitekmc');
+// console.log(a);

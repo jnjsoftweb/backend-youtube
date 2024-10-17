@@ -1,17 +1,17 @@
-import { loadJson } from 'jnj-lib-base';
-import path from 'path';
-import { fileURLToPath } from 'url';
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const JSON_DB_DIR =
-  process.env.JSON_DB_DIR || path.join(__dirname, '../../../../db/json');
-const channelsData = loadJson(`${JSON_DB_DIR}/channels.json`);
+import { getAllResponses } from '../../utils/youtubeREST.js';
 
 export const resolvers = {
   Query: {
-    channels: () => channelsData,
-    channel: (_, { id }) => channelsData.find((channel) => channel.id === id),
+    channels: () => [],
+    channel: async (_, { id }) => {
+      const channels = await getAllResponses('channels', {
+        part: 'snippet,statistics,contentDetails',
+        id, // "UCUpJs89fSBXNolQGOYKn0YQ"
+      });
+      return channels[0];
+    },
   },
 };
+
+//
+// http://localhost:3006/channels?part=snippet,statistics,contentDetails&id=UCUpJs89fSBXNolQGOYKn0YQ

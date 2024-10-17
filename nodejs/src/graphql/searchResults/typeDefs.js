@@ -38,7 +38,6 @@ export const typeDefs = gql`
   }
 
   extend type Query {
-    searchResults: [SearchResult]
-    searchResult(id: String!): SearchResult
+    searchResults(q: String!, type: String!): [SearchResult]
   }
 `;

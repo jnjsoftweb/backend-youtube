@@ -33,7 +33,6 @@ export const typeDefs = gql`
   }
 
   extend type Query {
-    subscriptions: [Subscription]
-    subscription(id: String!): Subscription
+    subscriptions(id: String!): [Subscription]
   }
 `;

@@ -1,12 +1,20 @@
-import { loadJson } from 'jnj-lib-base';
-import { JSON_DB_DIR } from '../../utils/settings.js';
-
-const playlistsData = loadJson(`${JSON_DB_DIR}/playlists.json`);
+import { getAllResponses } from '../../utils/youtubeREST.js';
 
 export const resolvers = {
   Query: {
-    playlists: () => playlistsData,
-    playlist: (_, { id }) =>
-      playlistsData.find((playlist) => playlist.id === id),
+    playlists: async (_, { channelId }) => {
+      const playlists = await getAllResponses('playlists', {
+        part: 'snippet,contentDetails',
+        channelId,
+      });
+      return playlists;
+    },
+    playlist: async (_, { id }) => {
+      const playlists = await getAllResponses('playlists', {
+        part: 'snippet,contentDetails',
+        id,
+      });
+      return playlists[0];
+    },
   },
 };
