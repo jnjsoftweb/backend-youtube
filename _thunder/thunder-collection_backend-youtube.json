@@ -1,0 +1,310 @@
+{
+    "clientName": "Thunder Client",
+    "collectionName": "backend-youtube",
+    "collectionId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+    "dateExported": "2024-10-18T08:45:41.805Z",
+    "version": "1.2",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "00c5e1d1-da38-442e-bcee-9acc118842f5",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_playlistItems",
+            "url": "{{YOUTUBE_API_ROOT}}/playlistItems?part=snippet&playlistId={{PLAYLIST_ID}}&maxResults=25&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 10000,
+            "created": "2024-10-18T02:14:56.318Z",
+            "modified": "2024-10-18T02:15:20.951Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet",
+                    "isPath": false
+                },
+                {
+                    "name": "playlistId",
+                    "value": "{{PLAYLIST_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "maxResults",
+                    "value": "25",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ca30f016-4c59-4dba-88c6-20abaddf4323",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_lastUploaded",
+            "url": "{{YOUTUBE_API_ROOT}}/playlistItems?search?part=snippet&channelId={{PLAYLIST_ID}}&order=date&type=video&maxResults={{MAX_RESULTS}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-18T02:17:45.528Z",
+            "modified": "2024-10-18T02:17:56.723Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "search",
+                    "value": "",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "f1559e57-77ac-46f8-9fe2-e591903b8518",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_playlistItems Copy",
+            "url": "{{YOUTUBE_API_ROOT}}/playlistItems?part=snippet,contentDetails&playlistId={{UPLOADS_PALYLISTS_ID}}&maxResults=25&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 20000,
+            "created": "2024-10-18T02:52:24.240Z",
+            "modified": "2024-10-18T02:52:30.497Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "snippet,contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "playlistId",
+                    "value": "{{UPLOADS_PALYLISTS_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "maxResults",
+                    "value": "25",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "bff304c0-eae6-45fc-9aa7-3207325a500a",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_mostPopular",
+            "url": "{{YOUTUBE_API_ROOT}}/videos?part=id,contentDetails&chart=mostPopular&maxResults={{MAX_RESULTS}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 30000,
+            "created": "2024-10-18T02:19:33.176Z",
+            "modified": "2024-10-18T02:56:08.945Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "id,contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "chart",
+                    "value": "mostPopular",
+                    "isPath": false
+                },
+                {
+                    "name": "maxResults",
+                    "value": "{{MAX_RESULTS}}",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "2e606214-c54f-40a6-813b-1d7279415b0b",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_channels",
+            "url": "{{YOUTUBE_API_ROOT}}/channels?part=contentDetails&id={{CHANNEL_ID}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-18T02:46:29.984Z",
+            "modified": "2024-10-18T02:47:44.813Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "{{CHANNEL_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "4d289451-e64c-4d3d-93f5-edcf30158d54",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_shorts",
+            "url": "{{YOUTUBE_API_ROOT}}/videos?part=id,contentDetails&id={{SHORTS_ID}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 40000,
+            "created": "2024-10-18T03:05:49.412Z",
+            "modified": "2024-10-18T03:06:10.144Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "id,contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "{{SHORTS_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ee1b52e7-fe5a-4dcf-8a65-11242faa15bf",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_video",
+            "url": "{{YOUTUBE_API_ROOT}}/videos?part=id,contentDetails&id={{VIDEO_ID}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 50000,
+            "created": "2024-10-18T03:07:03.144Z",
+            "modified": "2024-10-18T03:08:09.483Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "id,contentDetails",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "{{VIDEO_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "ec4986c1-39ce-4f59-8414-e7c587a2551c",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "chrome_watchLater",
+            "url": "{{EXPRESS_URL}}/watchLaterVideos?userId={{USER_ID}}",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-10-18T05:29:50.111Z",
+            "modified": "2024-10-18T05:31:49.029Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "userId",
+                    "value": "{{USER_ID}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "808c0a19-abf6-4f3e-8d06-5f25a707744d",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "_videos_videoDetail",
+            "url": "{{YOUTUBE_API_ROOT}}/videos?part={{PART_VIDEO}}&id={{SHORTS_ID}}&key={{YOUTUBE_API_KEY}}",
+            "method": "GET",
+            "sortNum": 60000,
+            "created": "2024-10-18T07:42:35.334Z",
+            "modified": "2024-10-18T07:44:28.335Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "part",
+                    "value": "{{PART_VIDEO}}",
+                    "isPath": false
+                },
+                {
+                    "name": "id",
+                    "value": "{{SHORTS_ID}}",
+                    "isPath": false
+                },
+                {
+                    "name": "key",
+                    "value": "{{YOUTUBE_API_KEY}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "51b1e44c-9fce-4e3a-a121-b5b14f990c9c",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "chrome_historyVideos",
+            "url": "{{EXPRESS_URL}}/historyVideos?userId={{USER_ID}}",
+            "method": "GET",
+            "sortNum": 70000,
+            "created": "2024-10-18T05:38:42.917Z",
+            "modified": "2024-10-18T05:39:04.525Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "userId",
+                    "value": "{{USER_ID}}",
+                    "isPath": false
+                }
+            ]
+        },
+        {
+            "_id": "8c649e43-7b1a-47a0-aae7-261e59af787e",
+            "colId": "56b9dd0f-a273-4781-82d4-eb70a00d52fb",
+            "containerId": "",
+            "name": "rest_mostPopularVideos",
+            "url": "{{EXPRESS_URL}}/mostPopularVideos?maxItems=100&type=shorts",
+            "method": "GET",
+            "sortNum": 80000,
+            "created": "2024-10-18T07:00:30.650Z",
+            "modified": "2024-10-18T07:31:44.763Z",
+            "headers": [],
+            "params": [
+                {
+                    "name": "maxItems",
+                    "value": "100",
+                    "isPath": false
+                },
+                {
+                    "name": "type",
+                    "value": "shorts",
+                    "isPath": false
+                }
+            ]
+        }
+    ],
+    "ref": "_c57aNwYSkie1CmCJ6yz-h_YT5HkiquwG3XkRNj5AU-rueagX0Wg5dfwQIjGVPy6tDGfyG0d_5qg1Qo5tE3Dxg"
+}

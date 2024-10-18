@@ -43,7 +43,23 @@ const myPlaylistItems = async (userId, playlistId = 'LL') => {
   return playlistItems;
 };
 
-export { getRelatedPlaylists, mySubscriptions, myPlaylistItems };
+// 좋아요 누른 동영상
+// const getWatchHistory = async (userId) => {
+//   const youtube = await yt(userId);
+//   try {
+//     const response = await youtube.service.videos.list({
+//       part: 'id',
+//       // part: 'snippet,contentDetails',
+//       myRating: 'like',
+//       maxResults: 10, // 최대 50개까지 가져올 수 있습니다
+//     });
 
-// const a = await mySubscriptions('bigwhitekmc');
-// console.log(a);
+//     console.log('시청 기록:', response.data.items);
+//     return response.data.items;
+//   } catch (error) {
+//     console.error('에러 발생:', error);
+//     return [];
+//   }
+// };
+
+export { getRelatedPlaylists, mySubscriptions, myPlaylistItems };

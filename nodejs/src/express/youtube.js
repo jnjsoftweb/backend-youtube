@@ -7,8 +7,12 @@ import { EXPRESS_PORT } from '../utils/settings.js';
 import {
   getAllResponses,
   getChannelIdByCustomUrl,
+  videosFromVideoIds,
+  isShorts,
+  mostPopularVideoIds,
 } from '../utils/youtubeREST.js';
-import { subscriptions, myPlaylistItems } from '../utils/youtubeGoogle.js';
+import { mySubscriptions, myPlaylistItems } from '../utils/youtubeGoogle.js';
+import { watchLaterVideoIds, historyVideoIds } from '../utils/youtubeChrome.js';
 import {
   downloadSubtitles,
   downloadYoutube,
@@ -68,11 +72,31 @@ app.get('/channelByCustomUrl', async (req, res) => {
   );
 });
 
+// Channel Info by Custom URL
+// {{YOUTUBE_API_ROOT}}/videos?part=id,contentDetails&chart=mostPopular&maxResults={{MAX_RESULTS}}&key={{YOUTUBE_API_KEY}}
+// http://localhost:3006/mostPopularVideos
+app.get('/mostPopularVideos', async (req, res) => {
+  const maxItems = req.query.maxItems ?? 50;
+  const type = req.query.type ?? 'all'; // all, shorts, video
+  const videoIds = await mostPopularVideoIds(maxItems);
+  let videos = await videosFromVideoIds(videoIds);
+  // console.log('videos: ', videos);
+
+  // ! 쇼츠 여부 판단이 불완전함
+  if (type === 'shorts') {
+    videos = videos.filter(isShorts);
+  } else if (type === 'video') {
+    videos = videos.filter((video) => !isShorts(video));
+  }
+
+  res.json(videos);
+});
+
 // * GOOGLE CLOUD(JNJ-LIB-GOOGLE) 사용 jnj-lib-google
 // 구독 목록 가져오기
 // http://localhost:3006/mySubscriptions?userId=mooninlearn
 app.get('/subscriptions', async (req, res) => {
-  res.json(await subscriptions(req.query.userId));
+  res.json(await mySubscriptions(req.query.userId));
 });
 
 // 좋아요 표시한 동영상 목록
@@ -81,7 +105,20 @@ app.get('/likePlaylistItems', async (req, res) => {
   res.json(await myPlaylistItems(req.query.userId, 'LL'));
 });
 
-// * Youtube Download(JNJ-LIB-GOOGLE) 사용 jnj-lib-google
+// * CHROME 사용(playwright)
+// 나중에 볼 동영상 가져오기
+app.get('/watchLaterVideos', async (req, res) => {
+  const videoIds = await watchLaterVideoIds(req.query.userId);
+  res.json(await videosFromVideoIds(videoIds));
+});
+
+// 시청 기록 가져오기
+app.get('/historyVideos', async (req, res) => {
+  const videoIds = await historyVideoIds(req.query.userId);
+  res.json(await videosFromVideoIds(videoIds));
+});
+
+// * Youtube 자막, 동영상 Download
 // http://localhost:3006/downloadYoutube?videoId=RfUlsRjxMM0&resolution=720
 app.get('/downloadYoutube', async (req, res) => {
   let { videoId, resolution, outputDir } = req.query;

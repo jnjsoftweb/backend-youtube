@@ -24,7 +24,7 @@ const getResponse = async (slug, params) => {
 };
 
 // 모든 응답을 가져오는 함수
-const getAllResponses = async (slug, params) => {
+const getAllResponses = async (slug, params, maxItems = Infinity) => {
   let results = [];
   let nextPageToken = null;
 
@@ -32,14 +32,34 @@ const getAllResponses = async (slug, params) => {
     const data = await getResponse(slug, {
       ...params,
       pageToken: nextPageToken,
-      maxResults: 50, // YouTube API의 최대 허용 값
+      maxResults: Math.min(50, maxItems - results.length), // Adjust maxResults based on remaining items
     });
 
     results = results.concat(data.items);
     nextPageToken = data.nextPageToken;
-  } while (nextPageToken);
+  } while (nextPageToken && results.length < maxItems);
+
+  // Trim excess items if we've exceeded maxItems
+  if (results.length > maxItems) {
+    results = results.slice(0, maxItems);
+  }
 
   return results;
+};
+
+// * Utils
+// https://youtube.googleapis.com/youtube/v3/videos?part=contentDetails,id,liveStreamingDetails,localizations,player, recordingDetails,snippet,statistics,status,topicDetails&id=qQPxP9TZEO8,D4nZW4wk3gQ&key=AIzaSyBHsLKBGbPRGi11o2m7i7e_TZU3efYsWag
+const videosFromVideoIds = async (
+  videoIds,
+  part = 'contentDetails,id,liveStreamingDetails,localizations,player,recordingDetails,snippet,statistics,status,topicDetails'
+) => {
+  const videos = [];
+  for (const id of videoIds) {
+    const query = { part, id };
+    const video = await getAllResponses('videos', query);
+    videos.push(video[0]);
+  }
+  return videos;
 };
 
 // YouTube API 응답을 가져오는 함수
@@ -65,7 +85,35 @@ const getChannelIdByCustomUrl = async (customUrl) => {
   }
 };
 
-export { getAllResponses, getResponse, getChannelIdByCustomUrl };
+// ! 쇼츠 여부 판단이 불완전함(추후 수정 필요, 60S 이하여도 쇼츠가 아닐 수 있음)
+const isShorts = (video) => {
+  const duration = video.contentDetails.duration;
+  return duration.includes('PT') && !duration.includes('M');
+};
+
+// ** videoId 배열 가져오기
+
+// * 인기 동영상
+const mostPopularVideoIds = async (maxItems = 50) => {
+  const videos = await getAllResponses(
+    'videos',
+    {
+      part: 'id',
+      chart: 'mostPopular',
+    },
+    maxItems
+  );
+  return videos.map((video) => video.id);
+};
+
+export {
+  getAllResponses,
+  getResponse,
+  getChannelIdByCustomUrl,
+  videosFromVideoIds,
+  isShorts,
+  mostPopularVideoIds,
+};
 
 // const response = await axios.get(`https://youtube.googleapis.com/youtube/v3/playlists?part=snippet&channelId=UCJIlfUISLIj9DODAQJWGHfA&maxResults=25&key=${API_KEY}`);
 // console.log(response.data);
